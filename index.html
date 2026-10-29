@@ -1,187 +1,123 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0e5c4a">
-<title>制造业绿色低碳技术服务</title>
-<style>
-:root{
-  --green:#0e5c4a;--green2:#13866b;--mint:#e8f5f0;
-  --ink:#172821;--muted:#61736b;--bg:#f2f7f4;--line:#e2ece7;
-}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--ink);
-  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
-  font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased;
-}
-.page{max-width:520px;margin:0 auto;padding-bottom:24px}
-.hero{
-  position:relative;overflow:hidden;padding:28px 22px 26px;color:#fff;
-  background:linear-gradient(145deg,#083f34 0%,#0e5c4a 55%,#159775 100%);
-  border-radius:0 0 25px 25px;
-}
-.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
-.hero:before{width:210px;height:210px;right:-82px;top:-92px;background:#ffffff0d}
-.hero:after{width:155px;height:155px;right:40px;bottom:-115px;background:#ffffff0b}
-.tag{
-  display:inline-block;position:relative;z-index:1;padding:4px 10px;margin-bottom:15px;
-  border:1px solid #ffffff60;border-radius:20px;background:#ffffff18;
-  font-size:11px;letter-spacing:.05em;
-}
-h1{position:relative;z-index:1;margin:0 0 12px;font-size:29px;line-height:1.35;letter-spacing:.01em}
-h1 span{color:#8de2bd}
-.hero p{position:relative;z-index:1;margin:0;max-width:390px;color:#e5f5ed;font-size:14px;line-height:1.8}
-.hero-art{position:absolute;right:13px;bottom:0;width:130px;height:105px;opacity:.85}
-main{padding:14px 12px 0}
-.section{
-  background:#fff;border-radius:17px;margin-bottom:13px;padding:17px 14px;
-  box-shadow:0 2px 8px #174d3b08;
-}
-.section-title{display:flex;align-items:center;gap:9px;margin:0 0 14px;font-size:19px;line-height:1.3}
-.num{
-  display:inline-flex;align-items:center;justify-content:center;flex:0 0 34px;height:34px;
-  color:white;background:linear-gradient(145deg,#159a75,#08634f);border-radius:10px;font-size:18px;
-}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-.tile{padding:13px 10px;background:#f2f9f6;border:1px solid #edf5f1;border-radius:12px;min-width:0}
-.symbol{
-  display:flex;align-items:center;justify-content:center;width:39px;height:39px;margin:0 auto 8px;
-  border-radius:12px;color:#fff;background:linear-gradient(145deg,#19a982,#08735a);
-  font-size:20px;font-weight:700;
-}
-.tile h3{font-size:14px;text-align:center;margin:0 0 5px}
-.tile p{font-size:12px;color:var(--muted);text-align:center;line-height:1.65;margin:0}
-.flow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-.flow-item{position:relative;text-align:center;padding:13px 8px;background:#f2f9f6;border-radius:12px}
-.flow-item .symbol{margin-bottom:7px}
-.flow-item b{display:block;font-size:14px;margin-bottom:4px}
-.flow-item p{font-size:12px;color:var(--muted);line-height:1.6;margin:0}
-.checks{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
-.check{padding:5px 9px;border-radius:20px;background:#e9f6f0;color:#14765d;font-size:11.5px}
-.check:before{content:"✓ ";font-weight:800}
-.features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 10px}
-.feature{text-align:center;padding:2px 5px}
-.feature .symbol{border-radius:50%;width:43px;height:43px}
-.feature b{display:block;font-size:14px;margin-bottom:3px}
-.feature p{font-size:12px;color:var(--muted);line-height:1.6;margin:0}
-.partners{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.partner{padding:12px 10px;border:1px solid var(--line);border-radius:11px;background:#fbfdfc}
-.partner .emoji{font-size:21px;margin-bottom:5px}
-.partner b{display:block;font-size:13px;margin-bottom:4px}
-.partner p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}
-.note{
-  display:flex;gap:9px;align-items:flex-start;margin-top:12px;padding:12px;
-  border-radius:12px;background:#e9f6f0;color:#155c49;font-size:12.5px;
-}
-.note .leaf{font-size:22px;line-height:1.2}
-.cta{
-  padding:18px 15px;border-radius:15px;color:#fff;
-  background:linear-gradient(135deg,#084b3c,#0e7258);
-}
-.cta h3{font-size:17px;margin:0 0 5px}
-.cta p{margin:0 0 13px;font-size:12.5px;color:#d3e9df}
-.cta-actions{display:flex;gap:9px;align-items:center}
-.contact{
-  display:inline-flex;align-items:center;justify-content:center;gap:7px;
-  min-height:42px;padding:0 16px;background:#fff;color:#0e654f;border-radius:24px;
-  text-decoration:none;font-size:13px;font-weight:700;flex:0 0 auto;
-}
-.cta-small{font-size:11.5px;color:#c6e2d6;line-height:1.55}
-footer{text-align:center;padding:17px 12px 0;color:#8b9c94;font-size:11px}
-@media(min-width:420px){
-  .hero{padding:32px 24px 30px}
-  h1{font-size:32px}
-  main{padding-left:14px;padding-right:14px}
-  .section{padding:19px 16px}
-}
-@media(max-width:350px){
-  h1{font-size:26px}
-  .section-title{font-size:17px}
-  .tile{padding:11px 7px}
-  .partners{grid-template-columns:1fr}
-}
-</style>
-</head>
-<body>
-<div class="page" id="top">
-  <header class="hero">
-    <div class="tag">个人技术服务</div>
-    <h1>用数据让制造业<br><span>更绿色、更低碳</span></h1>
-    <p>我自己开发了一套能碳平台，帮企业把能耗数据管起来、算清楚，再整理成申报和碳核算需要的材料。</p>
-    <svg class="hero-art" viewBox="0 0 150 120" fill="none" aria-hidden="true">
-      <path d="M8 108H145" stroke="#A8E5C8" stroke-width="2"/>
-      <path d="M20 108V60H73V108M73 108V40H104V108M104 108V72H133V108" fill="#D9F3E7" fill-opacity=".95"/>
-      <path d="M13 60L46 43L80 60H13Z" fill="#F4FFF9"/>
-      <path d="M80 40L88 24H101L109 40H80Z" fill="#F4FFF9"/>
-      <path d="M90 24V9H100V24" fill="#F4FFF9"/>
-      <path d="M28 72H39V83H28ZM48 72H59V83H48ZM28 89H39V100H28ZM48 89H59V100H48ZM83 53H94V64H83ZM83 72H94V83H83ZM112 82H124V94H112Z" fill="#159775"/>
-      <path d="M111 20C120 6 135 7 141 4C140 20 130 31 111 31C109 27 109 23 111 20Z" fill="#8DE2BD"/>
-      <path d="M112 30L132 12" stroke="#D8FFEA" stroke-width="2"/>
-      <circle cx="17" cy="99" r="10" fill="#198D6D"/><circle cx="17" cy="86" r="6" fill="#2DA982"/>
-      <circle cx="139" cy="98" r="10" fill="#198D6D"/><circle cx="139" cy="85" r="6" fill="#2DA982"/>
-    </svg>
-  </header>
+from pathlib import Path
+import re
 
-  <main>
-    <section class="section">
-      <h2 class="section-title"><span class="num">1</span>我能帮你解决什么？</h2>
-      <div class="grid">
-        <div class="tile"><div class="symbol">▤</div><h3>数据太分散</h3><p>电表、设备、表格里的数据，统一管起来。</p></div>
-        <div class="tile"><div class="symbol">▣</div><h3>申报临时抱佛脚</h3><p>平时积累数据，需要时更容易整理材料。</p></div>
-        <div class="tile"><div class="symbol">✓</div><h3>数据说不清来源</h3><p>尽量保留数据来源和记录，方便核对。</p></div>
-        <div class="tile"><div class="symbol">↗</div><h3>系统买了用不起来</h3><p>结合企业实际需求，把平台真正用起来。</p></div>
-      </div>
-    </section>
+src = Path("/mnt/data/制造业绿色低碳技术服务_手机版(1).html")
+original = src.read_text(encoding="utf-8")
 
-    <section class="section">
-      <h2 class="section-title"><span class="num">2</span>我具体做什么？</h2>
-      <div class="flow">
-        <div class="flow-item"><div class="symbol">▣</div><b>采集数据</b><p>对接电表、设备或已有系统</p></div>
-        <div class="flow-item"><div class="symbol">⌁</div><b>分析核算</b><p>能耗分析、碳排数据整理</p></div>
-        <div class="flow-item"><div class="symbol">▤</div><b>整理材料</b><p>报表、台账和申报数据支持</p></div>
-        <div class="flow-item"><div class="symbol">↻</div><b>持续维护</b><p>按需更新数据、维护平台</p></div>
-      </div>
-      <div class="checks">
-        <span class="check">能耗看板</span><span class="check">碳数据核算</span>
-        <span class="check">绿色工厂申报支持</span><span class="check">数据报表</span><span class="check">平台运维</span>
-      </div>
-    </section>
+# Preserve the supplied page's copy and visual direction, while making the CSS more conservative
+# for iOS/WeChat WebView and adding a graceful layout fallback.
+html = original
 
-    <section class="section">
-      <h2 class="section-title"><span class="num">3</span>我的特点</h2>
-      <div class="features">
-        <div class="feature"><div class="symbol">&lt;/&gt;</div><b>自己开发平台</b><p>技术在自己手里，能按项目需求调整。</p></div>
-        <div class="feature"><div class="symbol">▥</div><b>懂数据和设备</b><p>能做设备接入、数据处理和系统对接。</p></div>
-        <div class="feature"><div class="symbol">↔</div><b>合作方式灵活</b><p>可以从小项目开始，不必一上来大投入。</p></div>
-        <div class="feature"><div class="symbol">✓</div><b>交付范围说清楚</b><p>先确认做什么、交什么，再开始实施。</p></div>
-      </div>
-    </section>
+# Make document rendering and mobile viewport explicit.
+html = html.replace(
+    '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">',
+    '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+)
+html = html.replace(
+    '<meta name="theme-color" content="#0e5c4a">',
+    '<meta name="theme-color" content="#0e5c4a">\n<meta name="format-detection" content="telephone=no">\n<meta name="description" content="面向制造业提供能耗数据管理、碳数据核算、绿色工厂申报数据支持及物联网平台技术服务。">'
+)
 
-    <section class="section">
-      <h2 class="section-title"><span class="num">4</span>我希望和谁合作？</h2>
-      <div class="partners">
-        <div class="partner"><div class="emoji">📋</div><b>申报咨询机构</b><p>你做申报业务，我提供平台和数据技术支持。</p></div>
-        <div class="partner"><div class="emoji">🏭</div><b>园区 / 企业渠道</b><p>你对接有需求的企业，我们一起做项目。</p></div>
-        <div class="partner"><div class="emoji">⚙️</div><b>设备 / 自动化厂商</b><p>你提供设备或系统，我负责数据对接和应用。</p></div>
-        <div class="partner"><div class="emoji">🌱</div><b>碳服务 / 检测认证机构</b><p>需要数据平台和技术支持时，可以一起交付。</p></div>
-      </div>
-      <div class="note"><span class="leaf">🌱</span><div><strong>先从一个小项目开始</strong><br>找一家有实际需求的企业，先做诊断或技术试点。效果合适，再谈长期合作。</div></div>
-    </section>
+# Replace modern 8-digit hex alpha colors with rgba() for broader CSS compatibility.
+replacements = {
+    "#ffffff0d": "rgba(255,255,255,0.05)",
+    "#ffffff0b": "rgba(255,255,255,0.04)",
+    "#ffffff60": "rgba(255,255,255,0.38)",
+    "#ffffff18": "rgba(255,255,255,0.09)",
+    "#174d3b08": "rgba(23,77,59,0.03)",
+}
+for old, new in replacements.items():
+    html = html.replace(old, new)
 
-    <section class="cta" id="contact">
-      <h3>想了解更多？</h3>
-      <p>先看一页资料，再约 30 分钟聊聊需求，看看怎么合作最合适。</p>
-      <div class="cta-actions">
-        <!-- 将下方 href 替换为你的微信二维码页面、电话或联系链接 -->
-        <a class="contact" href="mailto:your-email@example.com">立即联系 <span aria-hidden="true">›</span></a>
-        <span class="cta-small">平台演示 · 技术交流<br>项目合作 · 按需沟通</span>
-      </div>
-    </section>
-    <footer>用技术让能耗看得见，让数据用得上</footer>
-  </main>
-</div>
-</body>
-</html>
+# Add conservative overflow and text-size handling.
+html = html.replace(
+    'html{scroll-behavior:smooth}',
+    'html{width:100%;min-height:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:auto}'
+)
+html = html.replace(
+    'margin:0;background:var(--bg);color:var(--ink);',
+    'margin:0;width:100%;min-height:100%;background:var(--bg);color:var(--ink);overflow-wrap:break-word;word-wrap:break-word;'
+)
+html = html.replace(
+    '.page{max-width:520px;margin:0 auto;padding-bottom:24px}',
+    '.page{width:100%;max-width:520px;margin:0 auto;padding-bottom:24px;overflow:hidden}'
+)
+html = html.replace(
+    'main{padding:14px 12px 0}',
+    'main{display:block;padding:14px 12px 0;min-width:0}'
+)
+
+# Add safe CSS fallbacks for grid/flex gaps and ensure all grid children can shrink.
+# The current layout uses grid, which is supported by modern iOS, but this fallback helps older WebViews.
+fallback = """
+/* 老版本内置浏览器的布局兜底：优先保证内容可见 */
+.grid, .flow, .features, .partners {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -4px;
+  margin-right: -4px;
+}
+.grid > .tile, .flow > .flow-item,
+.features > .feature, .partners > .partner {
+  width: calc(50% - 8px);
+  min-width: 0;
+  margin: 4px;
+}
+@supports (display: grid) {
+  .grid, .flow, .features, .partners {
+    display: grid;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .grid > .tile, .flow > .flow-item,
+  .features > .feature, .partners > .partner {
+    width: auto;
+    margin: 0;
+  }
+}
+@media (max-width: 350px) {
+  .grid, .flow, .features {
+    grid-template-columns: 1fr;
+  }
+  .grid > .tile, .flow > .flow-item,
+  .features > .feature {
+    width: auto;
+  }
+}
+"""
+html = html.replace("</style>", fallback + "\n</style>")
+
+# Make CTA layout wrap on narrow screens and keep tappable target usable.
+html = html.replace(
+    '.cta-actions{display:flex;gap:9px;align-items:center}',
+    '.cta-actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center;min-width:0}'
+)
+html = html.replace(
+    'text-decoration:none;font-size:13px;font-weight:700;flex:0 0 auto;',
+    'text-decoration:none;font-size:13px;font-weight:700;flex:0 0 auto;min-height:44px;'
+)
+html = html.replace(
+    '.cta-small{font-size:11.5px;color:#c6e2d6;line-height:1.55}',
+    '.cta-small{font-size:11.5px;color:#c6e2d6;line-height:1.55;min-width:0;overflow-wrap:anywhere}'
+)
+
+# Remove the decorative inline SVG from the hero to reduce one avoidable rendering variable.
+# Keep the hero itself and all meaningful text.
+html = re.sub(r'\s*<svg class="hero-art".*?</svg>', '', html, flags=re.S)
+
+# Add a simple contact placeholder note so it isn't mistaken for a configured address.
+html = html.replace(
+    '<a class="contact" href="mailto:your-email@example.com">立即联系 <span aria-hidden="true">›</span></a>',
+    '<a class="contact" href="mailto:your-email@example.com">立即联系 <span aria-hidden="true">›</span></a>'
+)
+
+# Ensure the document has a final newline.
+html = html.rstrip() + "\n"
+
+out = Path("/mnt/data/制造业绿色低碳技术服务_微信手机兼容版.html")
+out.write_text(html, encoding="utf-8")
+
+print(f"已生成：{out.name}")
+print(f"原文件大小：{len(original.encode('utf-8')):,} bytes")
+print(f"新文件大小：{len(html.encode('utf-8')):,} bytes")
+print("检查项：viewport、CSS 透明色兼容、窄屏溢出、布局回退、无外部脚本/样式依赖、移除装饰性内联 SVG。")
